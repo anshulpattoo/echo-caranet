@@ -1,0 +1,9 @@
+dataset/
+visualization/
+snapshots/
+__pycache__/
+figures/
+cuda_11.0.2_450.51.05_linux.run
+train_old_two.py
+train_old.py
+README.md
