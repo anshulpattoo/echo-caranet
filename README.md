@@ -28,7 +28,7 @@ The dataset used for this implementation is a large set of echocardiogram videos
 
 The video directory entitled `a4c-video-dir` should be saved in the base directory of this repository. 
 
-This implementation was developed in a Linux OS, running Ubuntu XX.XX. A conda environment was produced for this implementation, with all dependencies indicated in `CaraNet_Env.yml`.
+This implementation was developed in a Linux OS, running Ubuntu 20.04.6. A conda environment was produced for this implementation, with all dependencies indicated in `CaraNet_Env.yml`.
 
 While the conda environment is activated, in the base directory, execute `python train.py` from the command line. This script executes the visualization automatically as well. 
 
