@@ -4,7 +4,7 @@ __Implementation of the CUCAI 2022 paper, Automated Video Segmentation on Ultras
 
 ## Abstract
 
-https://github.com/anshulpattoo/echo-caranet/assets/41569741/b50f2c87-0190-423a-9367-2b4a8b94a5f9
+![example](https://github.com/anshulpattoo/echo-caranet/assets/41569741/d10357a4-4bc5-42ef-8c51-477af7e09c64)
 
 Cardiovascular disease is the global leading cause of death, accounting for nearly 40% of all deaths in Canada. Visualization of the left ventricle allows for assessment of the ejection fraction metric, a measurement of the percentage of blood that leaves the heart in each contraction, informing physicians about the current severity of the condition and the approach that should be taken towards a treatment plan. Unfortunately, human assessment of ejection fraction is an arduous task for the clinician and is subject to error due to the inaccuracies in segmentation of the ventricle. We implement and train a U-Net-based deep learning model on anonymized patient data to develop a method for automatically generating accurate left ventricle segmentations on echocardiogram ultrasounds. We quantitatively evaluate our model performance against expert-segmented ground truths and achieve a validation mean Intersection over Union (IoU) score of 0.84 and mean Dice similarity coefficient of 0.91 after two epochs of training. A live video demonstration of system performance is available here. Through this research, we successfully implement an architecture for generating anatomically accurate left ventricle segmentations on ultrasound. 
 
@@ -20,8 +20,7 @@ The architecture fundamentally subscribes to a U-Net structure with the two afor
 
 CaraNet is trained using deep supervision, which sums individual losses from distinct stages in CaraNet. This individual loss function L applies a weighted intersection over union (IoU) and weighted binary cross-entropy (BCE) loss function for both global loss and local (pixel-level) loss, respectively. The individual function measures the loss for three side-outputs (S3, S4, S5) and the global map Sg. The resultant total loss is measured as follows: 
 
-<img width="420" alt="QMIND_Research_Logo" src="https://github.com/anshulpattoo/echo-caranet/assets/41569741/a00dc75d-72ce-4747-a12a-042f64ec0053">
-
+<img width="246" alt="Picture2" src="https://github.com/anshulpattoo/echo-caranet/assets/41569741/c7e7cb83-d29d-4968-bed4-e7249815115d">
 
 ## Running this implementation
 
