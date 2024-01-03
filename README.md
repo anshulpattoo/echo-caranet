@@ -4,7 +4,7 @@ __Implementation of the CUCAI 2022 paper, Automated Video Segmentation on Ultras
 
 ## Abstract
 
-![example](https://github.com/anshulpattoo/echo-caranet/assets/41569741/d10357a4-4bc5-42ef-8c51-477af7e09c64)
+![example_2](https://github.com/anshulpattoo/echo-caranet/assets/41569741/aff91c04-e463-4574-a809-bb62c20a5c8d)
 
 Cardiovascular disease is the global leading cause of death, accounting for nearly 40% of all deaths in Canada. Visualization of the left ventricle allows for assessment of the ejection fraction metric, a measurement of the percentage of blood that leaves the heart in each contraction, informing physicians about the current severity of the condition and the approach that should be taken towards a treatment plan. Unfortunately, human assessment of ejection fraction is an arduous task for the clinician and is subject to error due to the inaccuracies in segmentation of the ventricle. We implement and train a U-Net-based deep learning model on anonymized patient data to develop a method for automatically generating accurate left ventricle segmentations on echocardiogram ultrasounds. We quantitatively evaluate our model performance against expert-segmented ground truths and achieve a validation mean Intersection over Union (IoU) score of 0.84 and mean Dice similarity coefficient of 0.91 after two epochs of training. A live video demonstration of system performance is available here. Through this research, we successfully implement an architecture for generating anatomically accurate left ventricle segmentations on ultrasound. 
 
@@ -16,7 +16,7 @@ CaraNet, developed by Lou et al., was adapted to address segmentation of the lef
 
 High-level overview of CaraNet architecture [1].
 
-The architecture fundamentally subscribes to a U-Net structure with the two aforementioned major mechanisms that aim to address the concern of segmentation of small medical objects. {fi | i = 0,...,n}, where n represents the depth of the network is a set of downsampling operations. The Channel-wise Feature Pyramid (CFP) module is a network which applies a series of dilated convolution — a specialized form of the standard 3x3 convolution which inserts gaps between pairs of convolution elements — channels to extract effective features [9]. Axial Reverse Attention (A-RA) is a technique that attempts to recognize salient or highlight features for a given activation map. A parallel partial decoder is a technique that aggregates activation maps from different stages of downsampling operations.
+The architecture fundamentally subscribes to a U-Net structure with the two aforementioned major mechanisms that aim to address the concern of segmentation of small medical objects. {fi | i = 0,...,n}, where n represents the depth of the network is a set of downsampling operations. The Channel-wise Feature Pyramid (CFP) module is a network which applies a series of dilated convolution, a specialized form of the standard 3x3 convolution which inserts gaps between pairs of convolution elements, channels to extract effective features [2]. Axial Reverse Attention (A-RA) is a technique that attempts to recognize salient or highlight features for a given activation map. A parallel partial decoder is a technique that aggregates activation maps from different stages of downsampling operations.
 
 CaraNet is trained using deep supervision, which sums individual losses from distinct stages in CaraNet. This individual loss function L applies a weighted intersection over union (IoU) and weighted binary cross-entropy (BCE) loss function for both global loss and local (pixel-level) loss, respectively. The individual function measures the loss for three side-outputs (S3, S4, S5) and the global map Sg. The resultant total loss is measured as follows: 
 
@@ -38,4 +38,4 @@ Please note that our team's work consisted of reviewing relevant methods to appr
 
 [1] Lou A, et al. CaraNet: context axial reverse attention network for segmentation of small medical objects, Proc. SPIE 12032, Medical Imaging 2022: Image Processing, 120320D (4 April 2022); https://doi.org/10.1117/12.2611802.
 
-
+[2] Lou A and Loew M., CFPNET: Channel-Wise Feature Pyramid For Real-Time Semantic Segmentation, 2021 IEEE International Conference on Image Processing (ICIP), 2021, pp. 1894-1898, https://doi.org/10.1109/ICIP42928.2021.9506485. 
